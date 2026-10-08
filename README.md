@@ -20,16 +20,29 @@ At 80% and 100% of the budget you get a desktop notification (Windows toast, mac
 
 Requires Node.js 18+.
 
-1. Copy `statusline.mjs` somewhere, e.g. `~/.claude/statusline.mjs`.
-2. Add to `~/.claude/settings.json`:
+```sh
+npx github:c0demite/claude_sub_limiter_mod
+```
 
-   ```json
-   {
-     "statusLine": { "type": "command", "command": "node ~/.claude/statusline.mjs" }
-   }
-   ```
+Optionally set this computer's budget right away:
 
-   On Windows use an absolute path, e.g. `node C:/Users/<you>/.claude/statusline.mjs`.
+```sh
+npx github:c0demite/claude_sub_limiter_mod --budget 30
+```
+
+This copies `statusline.mjs` to `~/.claude/sub-limiter-statusline.mjs` and sets `statusLine` in `~/.claude/settings.json` (the old file is kept as `settings.json.bak`). Restart Claude Code.
+
+<details><summary>Manual install</summary>
+
+Copy `statusline.mjs` anywhere and add to `~/.claude/settings.json`:
+
+```json
+{
+  "statusLine": { "type": "command", "command": "node /path/to/statusline.mjs" }
+}
+```
+
+</details>
 
 ## Configure
 
@@ -39,8 +52,8 @@ Requires Node.js 18+.
 { "budget": 30, "factor": 0.49, "calibratedAt": "..." }
 ```
 
-- `budget` - this machine's share of the 5h window in %. You can create the file with just `{ "budget": 50 }` before calibration.
-- Delete the file (or remove `factor`) to recalibrate, e.g. after switching plans - a bigger plan means each token is a smaller % of the window.
+- `budget` - this computer's share of the 5h window in % (or use `--budget` when installing).
+- Remove `factor` from the file to recalibrate, e.g. after switching plans - a bigger plan means each token is a smaller % of the window.
 
 The `PC` value is an estimate; expect a few % of drift.
 
