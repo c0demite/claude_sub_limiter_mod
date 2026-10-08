@@ -2,7 +2,7 @@
 // Claude Code status line: model · context · 5h limit · this machine's share of the 5h window · weekly limit · folder · git branch.
 // Set it in ~/.claude/settings.json as statusLine. No network, no git binary (reads .git/HEAD).
 //
-// "PC" bar: one subscription shared by several machines, each gets a budget (default 30% of the 5h window).
+// "PC" bar: your own subscription used on several computers, this one gets a budget (% of the 5h window).
 // Local usage = tokens from this machine's transcripts (~/.claude/projects) in the current window, weighted by price.
 // The factor converting that to "% of the account" calibrates itself once the window reaches 20%
 // (assumes only this machine used the account so far) and is stored in ~/.claude/sub-limiter.json.

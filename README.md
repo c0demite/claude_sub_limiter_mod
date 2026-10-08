@@ -1,7 +1,7 @@
 # claude_sub_limiter_mod
 
-A Claude Code status line for **one subscription shared by several machines**.
-Besides the usual 5h and weekly limits it shows how much of the 5h window **this machine** has used, against a budget you set (default 30%).
+A Claude Code status line for when you use **your own subscription on more than one computer** (e.g. work and home) and want to keep one of them from eating the whole 5h window.
+Besides the usual 5h and weekly limits it shows how much of the 5h window **this computer** has used, against a budget you set.
 
 ```
 Opus · ctx 41% 82k/200k · 5h ███░░░░░░░ 35% ↻17:00 · PC ███████░░░ 21%/30% · week █░░░░░░░░░ 12% ↻Sat 11:00 · my-project · ⎇ main
